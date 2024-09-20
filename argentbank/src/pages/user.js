@@ -1,36 +1,90 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "../assets/css/main.css";
-import argentBankLogo from '../assets/img/argentBankLogo.png';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Button from '../components/Button';
+import FormInput from '../components/FormInput';
+import { getUserProfile, updateUserProfile } from '../auth/auth';
 
 const User = () => {
+  const dispatch = useDispatch();
+  const { user, token } = useSelector((state) => state.auth);
+  const [firstName, setFirstName] = useState(user?.firstName || '');
+  const [lastName, setLastName] = useState(user?.lastName || '');
+  const [isEditing, setIsEditing] = useState(false); 
+
+  useEffect(() => {
+    if (token && !user) {
+      dispatch(getUserProfile());
+    }
+  }, [dispatch, token, user]);
+
+  const handleUpdateProfile = () => {
+    dispatch(updateUserProfile({ firstName, lastName }));
+    setIsEditing(false); 
+  };
+
+  const handleEditClick = () => {
+    setIsEditing(true); 
+  };
+
+  const handleCancelClick = () => {
+    setFirstName(user?.firstName || ''); 
+    setLastName(user?.lastName || '');
+    setIsEditing(false);
+  };
+
+  if (!token) {
+    return <Navigate to="/sign-in" />;
+  }
+
   return (
     <div>
-      <nav className="main-nav">
-        <Link className="main-nav-logo" to="/">
-          <img
-            className="main-nav-logo-image"
-            src={argentBankLogo}
-            alt="Argent Bank Logo"
-          />
-          <h1 className="sr-only">Argent Bank</h1>
-        </Link>
-        <div>
-          <Link className="main-nav-item" to="/user">
-            <i className="fa fa-user-circle"></i>
-            Tony
-          </Link>
-          <Link className="main-nav-item" to="/">
-            <i className="fa fa-sign-out"></i>
-            Sign Out
-          </Link>
-        </div>
-      </nav>
+      <Navbar isAuthenticated={!!token} userName={user?.firstName} />
       <main className="main bg-dark">
         <div className="header">
-          <h1>Welcome back<br />Tony Jarvis!</h1>
-          <button className="edit-button">Edit Name</button>
+          <h1>
+            Welcome back<br /> {user?.firstName} {user?.lastName} !
+          </h1>
+          {!isEditing && ( 
+            <button className="edit-button" onClick={handleEditClick}>
+              Edit Name
+            </button>
+          )}
         </div>
+
+        {isEditing && (
+          <section className="profile-content">
+            <form className="form-update-user">
+              <div className="div-form p1">
+                <FormInput
+                  label="First Name"
+                  type="text"
+                  id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <Button type="button" className="button update-button" onClick={handleUpdateProfile}>
+                  Update Profile
+                </Button>
+              </div>
+              <div className="div-form p2">
+                <FormInput
+                  label="Last Name"
+                  type="text"
+                  id="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+                <Button type="button" className="button cancel-button" onClick={handleCancelClick}>
+                  Cancel
+                </Button>
+              </div>
+            </form>
+          </section>
+        )}
+        
         <h2 className="sr-only">Accounts</h2>
         <section className="account">
           <div className="account-content-wrapper">
@@ -42,6 +96,7 @@ const User = () => {
             <button className="transaction-button">View transactions</button>
           </div>
         </section>
+
         <section className="account">
           <div className="account-content-wrapper">
             <h3 className="account-title">Argent Bank Savings (x6712)</h3>
@@ -52,6 +107,7 @@ const User = () => {
             <button className="transaction-button">View transactions</button>
           </div>
         </section>
+
         <section className="account">
           <div className="account-content-wrapper">
             <h3 className="account-title">Argent Bank Credit Card (x8349)</h3>
@@ -63,11 +119,9 @@ const User = () => {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p className="footer-text">Copyright 2020 Argent Bank</p>
-      </footer>
+      <Footer />
     </div>
   );
-}
+};
 
 export default User;

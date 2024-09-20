@@ -10,11 +10,24 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 90vh;
 }
 
 .main {
   flex: 1;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-user{
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bg-dark {
@@ -42,7 +55,42 @@ body {
   padding: 5px 20px;
 }
 
-.main-nav a {
+.div-btn{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.div-btn .section-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.div-btn .lnk{
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.div-btn .lnk:hover{
+  text-decoration: underline;
+}
+
+.div-btn .section-nav button{
+  background-color: #12002b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.main-nav .main-nav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   color: #2c3e50;
 }
@@ -53,7 +101,7 @@ body {
 
 .main-nav-item {
   text-decoration: none;
-  margin-right: 0.5rem;
+  gap: 5px;
 }
 
 .main-nav-item:hover {
@@ -99,6 +147,46 @@ body {
   margin-bottom: 0;
   font-size: 0.9rem;
 }
+
+.profile-content{
+  margin-bottom: 20px;
+}
+
+.form-update-user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-update-user .div-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-update-user .div-form.p1{
+  align-items: flex-end;
+}
+
+.form-update-user .div-form.p2{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-update-user .div-form .input-wrapper{
+  color: white;
+}
+
+.form-update-user .div-form .button{
+  width: 66%;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
 
 @media (min-width: 920px) {
   .hero {
@@ -169,6 +257,7 @@ body {
   box-sizing: border-box;
   background-color: white;
   width: 300px;
+
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
@@ -257,6 +346,7 @@ body {
   color: #fff;
   font-weight: bold;
   padding: 10px;
+  cursor: pointer;
 }
 
 .header {
