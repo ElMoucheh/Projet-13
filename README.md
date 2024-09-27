@@ -25,7 +25,7 @@ Après quelques jours dans l’entreprise, vous recevez le courriel suivant de M
 > 
 > Nous avons obtenu un contrat en deux parties qui se décompose en plusieurs phases :
 > 
-> **Phase 1 : Authentification des utilisateurs** - Création d'une application web permettant aux clients de se connecter et de gérer leurs comptes et leur profil.
+> **Phase 1 : Authentification des utilisateurs** - Création d'une application web permettant aux clients de se connecter et de gérer leurs comptes et leur profil.  
 > **Phase 2 : Transactions** - Il s’agirait de spécifier les endpoints d’API nécessaires pour une éventuelle deuxième mission une fois que nous aurons terminé la première.
 >
 > À la fin du projet, tu présenteras les deux livrables à Avery Moreau, qui gère l’équipe technique d’Argent Bank.
@@ -69,7 +69,7 @@ Quelques heures plus tard, vous recevez l’e-mail suivant :
 > + de visualiser toutes leurs transactions pour le mois en cours, groupées par compte ;
 > + de visualiser les détails d'une transaction dans une autre vue ;
 > + d'ajouter, de modifier ou de supprimer des informations sur une transaction.
->Puisque vous gérez déjà l'application web pour la phase 1, nous voulons connaître votre avis sur la façon dont vous pensez que les API devraient être modélisées du côté back end. Nous avons besoin que vous nous fournissiez un document décrivant les API proposées pour les transactions, en suivant les directives de Swagger. 
+> Puisque vous gérez déjà l'application web pour la phase 1, nous voulons connaître votre avis sur la façon dont vous pensez que les API devraient être modélisées du côté back end. Nous avons besoin que vous nous fournissiez un document décrivant les API proposées pour les transactions, en suivant les directives de Swagger. 
 >
 >  Parmi les éléments clés à spécifier pour chaque endpoint de l’API il faudra :
 > + La méthode HTTP (ex. : GET, POST etc.)
