@@ -21,7 +21,7 @@ Après quelques jours dans l’entreprise, vous recevez le courriel suivant de M
 >
 > 
 >
-> ![ab]([https://user.oc-static.com/upload/2023/10/10/16969371520395_Section%20mission.png](https://user.oc-static.com/upload/2023/12/28/17037832302526_Capture%20d%E2%80%99e%CC%81cran%202023-12-28%20a%CC%80%2018.07.01.png))
+> ![ab](https://user.oc-static.com/upload/2023/12/28/17037832302526_Capture%20d%E2%80%99e%CC%81cran%202023-12-28%20a%CC%80%2018.07.01.png)
 
 Nous avons obtenu un contrat en deux parties qui se décompose en plusieurs phases :
 
