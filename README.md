@@ -10,7 +10,7 @@ L'équipe est principalement composée de développeurs back-end et vient de com
   
 Après quelques jours dans l’entreprise, vous recevez le courriel suivant de Mila, votre cheffe de projet :
   
-> **De** : Mila
+> **De** : Mila  
 > **À** : Moi
 >
 > Objet : Bienvenue !
@@ -37,7 +37,7 @@ Après quelques jours dans l’entreprise, vous recevez le courriel suivant de M
   
 Quelques heures plus tard, vous recevez l’e-mail suivant :
   
-> **De** : Avery
+> **De** : Avery  
 > **À** : Moi, Mila
 >
 > Objet: Brief mission profil Argent Bank
