@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Initial state
 const initialState = {
     user: null,
     token: localStorage.getItem('token') || null,
@@ -8,7 +7,6 @@ const initialState = {
     error: null,
 };
 
-// Action pour la connexion
 export const login = createAsyncThunk('auth/login', async ({ email, password }, { rejectWithValue }) => {
     try {
         const response = await fetch('http://localhost:3001/api/v1/user/login', {
