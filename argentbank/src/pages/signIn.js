@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FormInput from '../components/FormInput';
 import Button from '../components/Button';
-import { login } from '../auth/auth'; // Mise à jour du chemin d'import
+import { login } from '../auth/auth'; 
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
